@@ -163,4 +163,4 @@ further studied.
 ## Credit
 
 I am grateful to [Mr. Arghya Biswas, Currently Boot Firmware Engineer at Intel Technology India Pvt. Ltd.](http://arghyabiswas.com/) for inspiring and this opportunity.\
-Also I would like to extend my gratitude to all the team member of [iAloy](https://ialoy.com).
+Also I would like to extend my gratitude to all the team members of [iAloy](https://ialoy.com).
