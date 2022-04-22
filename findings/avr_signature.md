@@ -89,8 +89,14 @@ directory into our workspace.
 mkdir workspace && cd workspace
 cp /etc/avrdude.conf ./avrdude.custom.conf
 ```
-Then we need to add a new programmer in `avrdude.custom.conf`. So we can open it
-in any text editor and add below lines at the end of file and save it.
+
+**Important Note**: Since I am using Raspberry Pi as a programmer so the following
+line is necessary, however if we choose to program it using USB or Arduino as
+ISP or any other programmer then the below mentioned line is absolutely optional.
+
+[_Optional for other programmers_] Then we need to add a new programmer in
+`avrdude.custom.conf`. So we can open it in any text editor and add below lines
+at the end of file and save it.
 
 ```
 programmer
@@ -114,10 +120,11 @@ sudo avrdude -C avrdude.custom.conf -p <any_part_number> -c <custom_programmer> 
 ```
 
 - Here *part_number* could be anything e.g. `m328`, `m329` etc. Avrdude Configuration
-file can used for the reference of more part numbers or [Avrdude Docs](https://avrdudes.github.io/avrdude/current/avrdude_3.html#Option-Descriptions) are very useful
+file can used for the reference of more part numbers or [Avrdude Docs][avrdude_docs] are very useful
 too.
 - Since we are programming using Raspberry Pi so the *custom_programmer* should the custom
 id of the programmer which added in the software setup section. So it should be `rpi`.
+For other programmer please refer to the [Avrdude Docs][avrdude_docs].
 - *file_name* could be any filename where read signature will be stored or we may
 use "`-`" for writing the output in the standard output.
 - Format is the output format of the avrdude command or more specifically the
@@ -127,7 +134,7 @@ format of signature. Possible values of *format* are: `i, s, r, e, m, a, d, h, o
 	- `h` : hexadecimal
 	- `o` : octal
 	- `b` : binary\
-More details and other option descriptions can be found at [Avrdude Docs](https://avrdudes.github.io/avrdude/current/avrdude_3.html#Option-Descriptions)
+More details and other option descriptions can be found at [Avrdude Docs][avrdude_docs]
 
 #### Example
 
@@ -164,3 +171,7 @@ further studied.
 
 I am grateful to [Mr. Arghya Biswas, Currently Boot Firmware Engineer at Intel Technology India Pvt. Ltd.](http://arghyabiswas.com/) for inspiring and this opportunity.\
 Also I would like to extend my gratitude to all the team members of [iAloy](https://ialoy.com).
+
+
+
+[avrdude_docs]: https://avrdudes.github.io/avrdude/current/avrdude_3.html#Option-Descriptions
